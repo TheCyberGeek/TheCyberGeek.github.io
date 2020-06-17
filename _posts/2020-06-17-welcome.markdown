@@ -4,9 +4,9 @@ title:  "Welcome to TheCyberGeek.co.uk"
 date:   2020-06-17 21:03:36 +0530
 categories: Welcome
 ---
-<p style="font-family:arial;">Welcome to my site. 
+<p style="font-family:arial;">Welcome to my site.<br><br>
 
-I am the owner of ServMor Security. 
-We are currently developing so check back soon!
+I am the owner of ServMor Security. <br><br>
+We are currently developing so check back soon!<br><br>
 
 Our main site is currently offline at <a href="https://servmorsecurity.com">https://servmorsecurity.com</a> but check back for updates!</p>
