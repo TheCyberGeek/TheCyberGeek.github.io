@@ -9,4 +9,4 @@ Welcome to my site.
 I am the owner of ServMor Security. 
 We are currently developing so check back soon!
 
-Our main site is currently offline at https://servmorsecurity.com but check back for updates!
+Our main site is currently offline at <a href="https://servmorsecurity.com">https://servmorsecurity.com</a> but check back for updates!
