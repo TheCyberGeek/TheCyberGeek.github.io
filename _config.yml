@@ -19,7 +19,7 @@ plainwhite:
   # generate social links in footer
   social_links:
     twitter: TheCyberGeek19
-    github:  TheCyberGeek.github.io
+    github:  TheCyberGeek
     linkedIn: #
     rss: rss
     # dribbble: jekyll
