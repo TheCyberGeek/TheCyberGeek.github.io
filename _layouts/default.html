@@ -5,9 +5,17 @@
   {%- include head.html -%}
 </head>
   <style>
-    .tagline {
+    #first {
+      margin-bottom:17px;
+      margin-top:0px;
+    }
+    #second {
       margin-bottom:0px;
       margin-top:0px;
+    }
+    #final {
+      margin-top:0px;
+      margin-bottom:17px;
     }
   </style>
 <body>
@@ -17,9 +25,9 @@
       <h2 id="title">
         <a href="/">{{ site.plainwhite.name }}</a>
       </h2>
-      <p class="tagline">{{ site.plainwhite.tagline }}</p>
-      <p class="tagline">{{ site.plainwhite.tagline2 }}</p>
-      <p class="tagline">{{ site.plainwhite.tagline3 }}</p>
+      <p id="first" class="tagline">{{ site.plainwhite.tagline }}</p>
+      <p id="second" class="tagline">{{ site.plainwhite.tagline2 }}</p>
+      <p id="final" class="tagline">{{ site.plainwhite.tagline3 }}</p>
       <ul class="social">
         {%- if site.plainwhite.social_links.github -%}
         <a href="https://github.com/{{ site.plainwhite.social_links.github }}" target="_blank">
