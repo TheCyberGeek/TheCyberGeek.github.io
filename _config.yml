@@ -12,7 +12,6 @@ plainwhite:
   name: TheCyberGeek
   tagline: Keeping it Geeky!
   tagline3: Owner of ServMor Security
-  tagline4: HackTheBox Player
   tagline2: BSc Computer Science
   date_format: "%b %-d, %Y"
   sitemap: true # set to true to generate sitemap.xml content
