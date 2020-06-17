@@ -13,6 +13,7 @@ plainwhite:
   tagline: Keeping it Geeky!
   tagline2: Owner of ServMor Security
   tagline3: HackTheBox Contender
+  tagline4: BSc Computer Science
   date_format: "%b %-d, %Y"
   sitemap: true # set to true to generate sitemap.xml content
   search: true # set to true to enable searchbar
