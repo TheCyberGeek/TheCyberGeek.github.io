@@ -24,7 +24,6 @@ layout: default
     </li>
 
     {%- for post in site.posts -%}
-	{%- if post.categories == "TryHackMe" -%}
       <li>
         {%- assign date_format = site.plainwhite.date_format | default: "%b %-d, %Y" -%}
         <a class="post-link" href="{{ post.url | relative_url }}">
@@ -44,7 +43,6 @@ layout: default
           {%- endif -%}
         </div>
       </li>
-	{%- endif -%}
     {%- endfor -%}
   </ul>
 
