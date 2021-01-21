@@ -1,5 +1,5 @@
 ---
-layout: pdf
+layout: post
 title:  "TryHackMe - Python Playground"
 date:   2021-01-21 12:57:36 +0530
 categories: Writeup
