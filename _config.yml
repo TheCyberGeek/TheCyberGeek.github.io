@@ -9,6 +9,11 @@ show_excerpts: true # set to true to show excerpts on the homepage
 sass:
   sass_dir: _sass
 plainwhite:
+  navigation:
+    - title: HackTheBox Walkthroughs
+      url: "/HackTheBox"
+    - title: TryHackMe Walkthroughs
+      url: "/TryHackMe"
   name: TheCyberGeek
   tagline: Keeping it Geeky!
   tagline3: Security Researcher
