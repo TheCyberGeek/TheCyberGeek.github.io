@@ -1,7 +1,7 @@
 ---
 layout: HackTheBox
 title:  "HackTheBox - ServMon"
-date:   2020-07-26 12:00:00 +0530
+date:   2021-01-21 21:43:00 +0530
 categories: Walkthrough HackTheBox
 ---
 <p style="font-family:arial;">HackTheBox ServMon<br><br>
