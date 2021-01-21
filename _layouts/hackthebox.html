@@ -8,13 +8,6 @@ layout: default
 
 {{ content }}
 
-<ul class="posts">
-    <p style="font-family:arial;">Welcome to TheCyberGeek's Personal Site.<br><br>
-        Here you will find my progress with CTFs, solutions and general updates.<br><br>
-        Keeping it geeky!
-    </p>
-</ul>
-
 {%- if site.posts.size > 0 -%}
 <ul class="posts">
     <li class="posts-labelgroup" id="posts-labelgroup">
@@ -30,8 +23,9 @@ layout: default
       {% endif %}
     </li>
 
-    {%- for post in site.posts -%}
-      {%- if post.categories == "Walkthrough HackTheBox" -%}
+  {%- for post in site.posts -%}
+    {%- for tag in post.categories -%}
+      {%- if tag == "HackTheBox" -%}
       <li>
         {%- assign date_format = site.plainwhite.date_format | default: "%b %-d, %Y" -%}
         <a class="post-link" href="{{ post.url | relative_url }}">
@@ -53,6 +47,7 @@ layout: default
       </li>
       {%- endif -%}
     {%- endfor -%}
+  {%- endfor -%}
   </ul>
 
   <!-- <p class="feed-subscribe"><svg class="svg-icon orange">
