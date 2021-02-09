@@ -14,6 +14,8 @@ plainwhite:
       url: "/HackTheBox"
     - title: TryHackMe Walkthroughs
       url: "/TryHackMe"
+    - title: CVEs
+      url: "/CVEs"
   name: TheCyberGeek
   tagline: Keeping it Geeky!
   tagline3: Security Researcher
