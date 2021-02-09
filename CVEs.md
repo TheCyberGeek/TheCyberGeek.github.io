@@ -1,3 +1,3 @@
 ---
-layout: CVEs
+layout: cves
 ---
