@@ -113,26 +113,15 @@
         {%- endif -%}
       </ul>
       {%- if site.plainwhite.navigation -%}
-      {%- if not site.plainwhite.dark_mode -%}
       <nav class="navigation">
         <ul>
           {% for link in site.plainwhite.navigation %}
           <li>
-            <a href="{{ link.url }}" style="font-family:Raleway, sans-serif; color:black;">{{ link.title }}</a>
+            <a href="{{ link.url }}" style="font-family:Raleway, sans-serif;">{{ link.title }}</a>
           </li>
           {% endfor %}
         </ul>
       </nav>
-      {%- else -%}
-      <nav class="navigation">
-        <ul>
-          {% for link in site.plainwhite.navigation %}
-          <li>
-            <a href="{{ link.url }}" style="font-family:Raleway, sans-serif; color:white;">{{ link.title }}</a>
-          </li>
-          {% endfor %}
-        </ul>
-      </nav>  
       {%- endif -%}  
       <p>&copy;
         {{ "now" | date: "%Y" }}</p>
