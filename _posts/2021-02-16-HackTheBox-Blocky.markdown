@@ -1,7 +1,7 @@
 ---
 layout: HackTheBox
 title:  "HackTheBox - Blocky"
-date:   2021-02-16 14:14:00 +0000
+date:   2021-02-16 17:46:00 +0000
 categories: Walkthrough HackTheBox
 ---
 <p style="font-family:arial;">HackTheBox Blocky<br><br>
