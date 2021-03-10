@@ -1,6 +1,6 @@
 ---
 layout: HackTheBox
-title:  "HackTheBox - Kernel Adentures: Part 1"
+title:  "HackTheBox - Kernel Adventures: Part 1"
 date:   2021-03-10 18:00:00 +0000
 categories: Challenge Walkthrough HackTheBox
 ---
