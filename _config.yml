@@ -18,6 +18,7 @@ plainwhite:
       url: "/CVEs"
   name: TheCyberGeek
   tagline: Keeping it Geeky!
+  tagline4: OSCP Certified
   tagline3: Security Researcher
   tagline2: BSc Computer Science
   date_format: "%b %-d, %Y"
