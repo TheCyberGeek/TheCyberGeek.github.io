@@ -18,9 +18,9 @@ plainwhite:
       url: "/CVEs"
   name: TheCyberGeek
   tagline: Keeping it Geeky!
-  tagline4: OSCP Certified
+  tagline2: OSCP Certified
   tagline3: Security Researcher
-  tagline2: BSc Computer Science
+  tagline4: BSc Computer Science
   date_format: "%b %-d, %Y"
   sitemap: true # set to true to generate sitemap.xml content
   search: true # set to true to enable searchbar
