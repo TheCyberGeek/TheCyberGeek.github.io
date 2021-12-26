@@ -19,8 +19,8 @@ plainwhite:
   name: TheCyberGeek
   tagline: Keeping it Geeky!
   tagline2: OSCP Certified
-  tagline3: Security Researcher
-  tagline4: BSc Computer Science
+  tagline3: Content Engineer @ HTB
+  tagline4: MSc Cyber Security & Human Factors
   date_format: "%b %-d, %Y"
   sitemap: true # set to true to generate sitemap.xml content
   search: true # set to true to enable searchbar
