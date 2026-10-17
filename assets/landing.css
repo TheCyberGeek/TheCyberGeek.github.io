@@ -1,0 +1,73 @@
+/* A viewport-sized room. Art, effects and hotspots share one coordinate plane. */
+body.landing{height:100vh;height:100dvh;min-height:0;overflow:hidden;background:#080e1b}
+.landing .lab-shell{position:relative;width:100%;height:100%;max-width:none;margin:0;padding:0}
+.landing .room-frame{position:absolute;inset:0;border:0;box-shadow:none}
+.landing .frame-bar,.landing>.lab-footer,.landing .scene-caption{display:none}
+.landing .room-heading{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.landing .room-scene{width:100%;height:100%;aspect-ratio:auto;overflow-x:auto;overflow-y:hidden;scrollbar-width:none;scroll-snap-type:none;overscroll-behavior-x:contain}
+.landing .room-scene::-webkit-scrollbar{display:none}
+.landing .room-world{position:relative;top:50%;transform:translateY(-50%);width:max(100vw,177.6833156vh);height:max(100vh,56.2799043vw);width:max(100vw,177.6833156dvh);height:max(100dvh,56.2799043vw)}
+.landing .room-image{width:100%;height:100%;max-width:none;object-fit:fill}
+.landing .room-scene #room-effects,.landing .room-vignette{width:100%;height:100%;max-width:none}
+.landing .room-vignette{background:linear-gradient(180deg,#030b1750,transparent 22%,transparent 72%,#030b1780)}
+.landing .hotspot-archive{left:12.8%;top:51%}
+.landing .hotspot-about{left:38.7%;top:67%}
+.landing .hotspot-terminal{left:34%;top:35%;flex-direction:column-reverse}
+.landing .hotspot-terminal .hotspot-label{margin:0 0 13px}
+.landing .hotspot-terminal .hotspot-label::before{top:100%;bottom:auto}
+.landing .hotspot-research{left:88.5%;top:55%}
+.landing .hotspot-guidelines{left:91%;top:19%}
+.landing .hotspot-contact{left:63.3%;top:35%;flex-direction:column-reverse}
+.landing .hotspot-contact .hotspot-label{margin:0 0 13px}
+.landing .hotspot-contact .hotspot-label::before{top:100%;bottom:auto}
+.landing>.lab-header{position:fixed;inset:0 0 auto;z-index:4;max-width:none;padding:28px 32px 42px;border:0;background:linear-gradient(#040b18db,#040b1866 65%,transparent);pointer-events:none}
+.landing>.lab-header a{pointer-events:auto;text-shadow:0 2px 8px #000}
+.landing .header-status{color:#c0cfdb;text-shadow:0 2px 8px #000}
+.landing .home-profile-links{display:flex;align-items:center;gap:18px;margin-left:auto;flex-shrink:0}
+.landing .home-profile-links .github-link{margin-left:0}
+.landing .htb-profile-link{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:10px 14px;border:1px solid #9fef00;border-radius:4px;background:#111927e6;color:#9fef00;font:600 11px/1.5 var(--sans);letter-spacing:.6px;white-space:nowrap}
+.landing .htb-profile-link:hover{background:#9fef00;color:#111927;text-shadow:none}
+.landing .room-dock{position:fixed;z-index:4;left:50%;bottom:max(24px,env(safe-area-inset-bottom));transform:translateX(-50%);width:min(1060px,calc(100% - 64px));margin:0;grid-template-columns:repeat(6,minmax(0,1fr));background:#091523e6;border:1px solid #6e8aa06b;box-shadow:0 12px 35px #0008;backdrop-filter:blur(14px)}
+.landing .room-dock a{min-width:0;padding:19px 16px;min-height:75px}
+.landing .room-dock a:last-child{grid-column:auto;justify-content:normal}
+.landing .room-dock .dock-guidelines>span{min-width:0;white-space:normal;line-height:1.4}
+.landing .room-dock a+a{border-left:1px solid #6e8aa040;border-top:0}
+.landing .room-dock kbd{color:#9fb2c7}
+.landing .room-toolbar{position:fixed;z-index:4;bottom:calc(max(24px,env(safe-area-inset-bottom)) + 91px);left:32px;right:32px;padding:0;background:none;border:0;min-height:0;pointer-events:none}
+.landing .room-toolbar p{background:#071321dc;border:1px solid #6e8aa040;backdrop-filter:blur(10px);padding:10px 13px}
+.landing .room-toolbar p{color:#c3d1de;font-size:10px;max-width:60ch}
+
+
+.landing .no-js{position:fixed;z-index:5;left:24px;right:24px;top:100px;padding:18px;background:#091523f2;border:1px solid var(--green)}
+.landing .no-js a{color:var(--green);text-decoration:underline}
+@media(max-width:760px){
+  .landing>.lab-header{padding:calc(18px + env(safe-area-inset-top)) 18px 30px}
+  .landing .room-dock{width:calc(100% - 24px);bottom:max(12px,env(safe-area-inset-bottom))}
+  .landing .room-dock a{padding:15px 3px 10px;min-height:86px;flex-direction:column;gap:7px;justify-content:center;text-align:center}
+  .landing .room-dock a:last-child{justify-content:center}
+  .landing .room-dock a>span{font-size:7px;letter-spacing:0;white-space:nowrap}
+  .landing .room-dock a>svg,.landing .room-dock a>img{width:23px;height:23px}
+  .landing .room-dock small{display:none}
+  .landing .room-dock kbd{top:4px;right:5px;font-size:6px}
+  .landing .room-toolbar{bottom:calc(max(12px,env(safe-area-inset-bottom)) + 98px);left:12px;right:12px;flex-direction:column;align-items:center;gap:7px}
+  .landing .room-toolbar p{font-size:8px;text-align:center;padding:7px 9px}
+
+
+}
+@media(max-height:520px) and (orientation:landscape){
+  .landing>.lab-header{padding:14px 20px 24px}
+  .landing .room-dock{bottom:10px;width:min(800px,calc(100% - 40px))}
+  .landing .room-dock a{min-height:52px;padding:12px 10px;flex-direction:row}
+  .landing .room-dock small,.landing .room-toolbar p{display:none}
+  .landing .room-toolbar{bottom:74px;left:20px;right:20px;align-items:flex-end}
+
+}
+
+/* Animated areas only. All static details are painted into lab-room-grey-beard.png. */
+#avatar-motion{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;image-rendering:pixelated;transition:filter 1s}
+
+.discord-animation{position:absolute;inset:0;pointer-events:none;transition:filter 1s}
+.discord-animation canvas{position:absolute;left:0;top:0;width:1000px;height:750px;max-width:none;transform-origin:0 0;image-rendering:pixelated}
+
+
+

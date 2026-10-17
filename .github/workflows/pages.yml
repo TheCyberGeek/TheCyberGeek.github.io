@@ -1,0 +1,62 @@
+name: Build and deploy portfolio
+
+on:
+  push:
+    branches: [master, main]
+  pull_request:
+    branches: [master, main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out complete portfolio
+        uses: actions/checkout@v6
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Build static portfolio
+        run: python scripts/build.py
+      - name: Check frontend and archive behavior
+        run: |
+          python scripts/check-frontend.py
+          node --test tests/*.test.cjs
+          python -m unittest discover -s tests -p 'test_*.py' -v
+      - name: Configure Pages
+        id: pages
+        uses: actions/configure-pages@v5
+      - name: Build for Pages base path
+        env:
+          PAGES_BASE_PATH: ${{ steps.pages.outputs.base_path }}
+        run: python scripts/build.py --base-path "$PAGES_BASE_PATH"
+      - name: Validate generated archive and local links
+        env:
+          PAGES_BASE_PATH: ${{ steps.pages.outputs.base_path }}
+        run: python scripts/check-build.py --base-path "$PAGES_BASE_PATH"
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: ./_site
+  deploy:
+    if: github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

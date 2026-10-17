@@ -1,0 +1,510 @@
+[
+  {
+    "title": "HackTheBox - Kernel Adventures: Part 1",
+    "date": "2021-03-10",
+    "category": "HackTheBox",
+    "tags": [
+      "Challenge",
+      "Walkthrough"
+    ],
+    "url": "https://thecybergeek.co.uk/challenge/walkthrough/hackthebox/2021/03/10/HackTheBox-Kernel-Adventures-P1.html"
+  },
+  {
+    "title": "HackTheBox - Echoland",
+    "date": "2021-03-06",
+    "category": "HackTheBox",
+    "tags": [
+      "Challenge",
+      "Walkthrough"
+    ],
+    "url": "https://thecybergeek.co.uk/challenge/walkthrough/hackthebox/2021/03/06/HackTheBox-Echoland.html"
+  },
+  {
+    "title": "HackTheBox - Jeeves",
+    "date": "2021-02-24",
+    "category": "HackTheBox",
+    "tags": [
+      "Challenge",
+      "Walkthrough"
+    ],
+    "url": "https://thecybergeek.co.uk/challenge/walkthrough/hackthebox/2021/02/24/HackTheBox-Jeeves.html"
+  },
+  {
+    "title": "HackTheBox - Baby Breaking Grad",
+    "date": "2021-02-23",
+    "category": "HackTheBox",
+    "tags": [
+      "Challenge",
+      "Walkthrough"
+    ],
+    "url": "https://thecybergeek.co.uk/challenge/walkthrough/hackthebox/2021/02/23/HackTheBox-Baby-Breaking-Grad.html"
+  },
+  {
+    "title": "HackTheBox - Sick ROP",
+    "date": "2021-02-23",
+    "category": "HackTheBox",
+    "tags": [
+      "Challenge",
+      "Walkthrough"
+    ],
+    "url": "https://thecybergeek.co.uk/challenge/walkthrough/hackthebox/2021/02/23/HackTheBox-Sick-ROP.html"
+  },
+  {
+    "title": "HackTheBox - Looking Glass",
+    "date": "2021-02-23",
+    "category": "HackTheBox",
+    "tags": [
+      "Challenge",
+      "Walkthrough"
+    ],
+    "url": "https://thecybergeek.co.uk/challenge/walkthrough/hackthebox/2021/02/23/HackTheBox-LookingGlass.html"
+  },
+  {
+    "title": "HackTheBox - Sanitize",
+    "date": "2021-02-23",
+    "category": "HackTheBox",
+    "tags": [
+      "Challenge",
+      "Walkthrough"
+    ],
+    "url": "https://thecybergeek.co.uk/challenge/walkthrough/hackthebox/2021/02/23/HackTheBox-Sanitize.html"
+  },
+  {
+    "title": "HackTheBox - What Does The F Say",
+    "date": "2021-02-22",
+    "category": "HackTheBox",
+    "tags": [
+      "Challenge",
+      "Walkthrough"
+    ],
+    "url": "https://thecybergeek.co.uk/challenge/walkthrough/hackthebox/2021/02/22/HackTheBox-WhatDoesTheFSay.html"
+  },
+  {
+    "title": "HackTheBox - Baby Auth",
+    "date": "2021-02-22",
+    "category": "HackTheBox",
+    "tags": [
+      "Challenge",
+      "Walkthrough"
+    ],
+    "url": "https://thecybergeek.co.uk/challenge/walkthrough/hackthebox/2021/02/22/HackTheBox-BabyAuth.html"
+  },
+  {
+    "title": "HackTheBox - Baby WaFfles Order",
+    "date": "2021-02-22",
+    "category": "HackTheBox",
+    "tags": [
+      "Challenge",
+      "Walkthrough"
+    ],
+    "url": "https://thecybergeek.co.uk/challenge/walkthrough/hackthebox/2021/02/22/HackTheBox-BabyWaFflesOrder.html"
+  },
+  {
+    "title": "HackTheBox - Baby Website Rick",
+    "date": "2021-02-22",
+    "category": "HackTheBox",
+    "tags": [
+      "Challenge",
+      "Walkthrough"
+    ],
+    "url": "https://thecybergeek.co.uk/challenge/walkthrough/hackthebox/2021/02/22/HackTheBox-BabyWebsiteRick.html"
+  },
+  {
+    "title": "HackTheBox - Baby Nginxatsu",
+    "date": "2021-02-21",
+    "category": "HackTheBox",
+    "tags": [
+      "Challenge",
+      "Walkthrough"
+    ],
+    "url": "https://thecybergeek.co.uk/challenge/walkthrough/hackthebox/2021/02/21/HackTheBox-BabyNginxatsu.html"
+  },
+  {
+    "title": "HackTheBox - Intel",
+    "date": "2021-02-21",
+    "category": "HackTheBox",
+    "tags": [
+      "Challenge",
+      "Walkthrough"
+    ],
+    "url": "https://thecybergeek.co.uk/challenge/walkthrough/hackthebox/2021/02/21/HackTheBox-Intel.html"
+  },
+  {
+    "title": "HackTheBox - Frolic",
+    "date": "2021-02-20",
+    "category": "HackTheBox",
+    "tags": [
+      "Walkthrough"
+    ],
+    "url": "https://thecybergeek.co.uk/walkthrough/hackthebox/2021/02/20/HackTheBox-Frolic.html"
+  },
+  {
+    "title": "HackTheBox - Blocky",
+    "date": "2021-02-16",
+    "category": "HackTheBox",
+    "tags": [
+      "Walkthrough"
+    ],
+    "url": "https://thecybergeek.co.uk/walkthrough/hackthebox/2021/02/16/HackTheBox-Blocky.html"
+  },
+  {
+    "title": "HackTheBox - Popcorn",
+    "date": "2021-02-16",
+    "category": "HackTheBox",
+    "tags": [
+      "Walkthrough"
+    ],
+    "url": "https://thecybergeek.co.uk/walkthrough/hackthebox/2021/02/16/HackTheBox-Popcorn.html"
+  },
+  {
+    "title": "HackTheBox - Mirai",
+    "date": "2021-02-16",
+    "category": "HackTheBox",
+    "tags": [
+      "Walkthrough"
+    ],
+    "url": "https://thecybergeek.co.uk/walkthrough/hackthebox/2021/02/16/HackTheBox-Mirai.html"
+  },
+  {
+    "title": "HackTheBox - Jarvis",
+    "date": "2021-02-15",
+    "category": "HackTheBox",
+    "tags": [
+      "Walkthrough"
+    ],
+    "url": "https://thecybergeek.co.uk/walkthrough/hackthebox/2021/02/15/HackTheBox-Jarvis.html"
+  },
+  {
+    "title": "HackTheBox - Networked",
+    "date": "2021-02-14",
+    "category": "HackTheBox",
+    "tags": [
+      "Walkthrough"
+    ],
+    "url": "https://thecybergeek.co.uk/walkthrough/hackthebox/2021/02/14/HackTheBox-Networked.html"
+  },
+  {
+    "title": "HackTheBox - SwagShop",
+    "date": "2021-02-14",
+    "category": "HackTheBox",
+    "tags": [
+      "Walkthrough"
+    ],
+    "url": "https://thecybergeek.co.uk/walkthrough/hackthebox/2021/02/14/HackTheBox-SwagShop.html"
+  },
+  {
+    "title": "HackTheBox - Irked",
+    "date": "2021-02-14",
+    "category": "HackTheBox",
+    "tags": [
+      "Walkthrough"
+    ],
+    "url": "https://thecybergeek.co.uk/walkthrough/hackthebox/2021/02/14/HackTheBox-Irked.html"
+  },
+  {
+    "title": "HackTheBox - Sunday",
+    "date": "2021-02-13",
+    "category": "HackTheBox",
+    "tags": [
+      "Walkthrough"
+    ],
+    "url": "https://thecybergeek.co.uk/walkthrough/hackthebox/2021/02/13/HackTheBox-Sunday.html"
+  },
+  {
+    "title": "HackTheBox - Poison",
+    "date": "2021-02-13",
+    "category": "HackTheBox",
+    "tags": [
+      "Walkthrough"
+    ],
+    "url": "https://thecybergeek.co.uk/walkthrough/hackthebox/2021/02/13/HackTheBox-Poison.html"
+  },
+  {
+    "title": "HackTheBox - Valentine",
+    "date": "2021-02-13",
+    "category": "HackTheBox",
+    "tags": [
+      "Walkthrough"
+    ],
+    "url": "https://thecybergeek.co.uk/walkthrough/hackthebox/2021/02/13/HackTheBox-Valentine.html"
+  },
+  {
+    "title": "HackTheBox - Node",
+    "date": "2021-02-13",
+    "category": "HackTheBox",
+    "tags": [
+      "Walkthrough"
+    ],
+    "url": "https://thecybergeek.co.uk/walkthrough/hackthebox/2021/02/13/HackTheBox-Node.html"
+  },
+  {
+    "title": "HackTheBox - Sense",
+    "date": "2021-02-13",
+    "category": "HackTheBox",
+    "tags": [
+      "Walkthrough"
+    ],
+    "url": "https://thecybergeek.co.uk/walkthrough/hackthebox/2021/02/13/HackTheBox-Sense.html"
+  },
+  {
+    "title": "HackTheBox - Beep",
+    "date": "2021-02-13",
+    "category": "HackTheBox",
+    "tags": [
+      "Walkthrough"
+    ],
+    "url": "https://thecybergeek.co.uk/walkthrough/hackthebox/2021/02/13/HackTheBox-Beep.html"
+  },
+  {
+    "title": "HackTheBox - Nibbles",
+    "date": "2021-02-12",
+    "category": "HackTheBox",
+    "tags": [
+      "Walkthrough"
+    ],
+    "url": "https://thecybergeek.co.uk/walkthrough/hackthebox/2021/02/12/HackTheBox-Nibbles.html"
+  },
+  {
+    "title": "HackTheBox - Bashed",
+    "date": "2021-02-12",
+    "category": "HackTheBox",
+    "tags": [
+      "Walkthrough"
+    ],
+    "url": "https://thecybergeek.co.uk/walkthrough/hackthebox/2021/02/12/HackTheBox-Bashed.html"
+  },
+  {
+    "title": "HackTheBox - Shocker",
+    "date": "2021-02-12",
+    "category": "HackTheBox",
+    "tags": [
+      "Walkthrough"
+    ],
+    "url": "https://thecybergeek.co.uk/walkthrough/hackthebox/2021/02/12/HackTheBox-Shocker.html"
+  },
+  {
+    "title": "HackTheBox - Brainfuck",
+    "date": "2021-02-12",
+    "category": "HackTheBox",
+    "tags": [
+      "Walkthrough"
+    ],
+    "url": "https://thecybergeek.co.uk/walkthrough/hackthebox/2021/02/12/HackTheBox-Brainfuck.html"
+  },
+  {
+    "title": "HackTheBox - Lame",
+    "date": "2021-02-12",
+    "category": "HackTheBox",
+    "tags": [
+      "Walkthrough"
+    ],
+    "url": "https://thecybergeek.co.uk/walkthrough/hackthebox/2021/02/12/HackTheBox-Lame.html"
+  },
+  {
+    "title": "HackTheBox - Jail",
+    "date": "2021-02-06",
+    "category": "HackTheBox",
+    "tags": [
+      "Walkthrough"
+    ],
+    "url": "https://thecybergeek.co.uk/walkthrough/hackthebox/2021/02/06/HackTheBox-Jail.html"
+  },
+  {
+    "title": "HackTheBox - Hawk",
+    "date": "2021-02-03",
+    "category": "HackTheBox",
+    "tags": [
+      "Walkthrough"
+    ],
+    "url": "https://thecybergeek.co.uk/walkthrough/hackthebox/2021/02/03/HackTheBox-Hawk.html"
+  },
+  {
+    "title": "HackTheBox - DevOops",
+    "date": "2021-02-03",
+    "category": "HackTheBox",
+    "tags": [
+      "Walkthrough"
+    ],
+    "url": "https://thecybergeek.co.uk/walkthrough/hackthebox/2021/02/03/HackTheBox-DevOops.html"
+  },
+  {
+    "title": "HackTheBox - Falafel",
+    "date": "2021-02-02",
+    "category": "HackTheBox",
+    "tags": [
+      "Walkthrough"
+    ],
+    "url": "https://thecybergeek.co.uk/walkthrough/hackthebox/2021/02/02/HackTheBox-Falafel.html"
+  },
+  {
+    "title": "HackTheBox - Tally",
+    "date": "2021-02-01",
+    "category": "HackTheBox",
+    "tags": [
+      "Walkthrough"
+    ],
+    "url": "https://thecybergeek.co.uk/walkthrough/hackthebox/2021/02/01/HackTheBox-Tally.html"
+  },
+  {
+    "title": "HackTheBox - Jeeves",
+    "date": "2021-02-01",
+    "category": "HackTheBox",
+    "tags": [
+      "Walkthrough"
+    ],
+    "url": "https://thecybergeek.co.uk/walkthrough/hackthebox/2021/02/01/HackTheBox-Jeeves.html"
+  },
+  {
+    "title": "HackTheBox - SecNotes",
+    "date": "2021-02-01",
+    "category": "HackTheBox",
+    "tags": [
+      "Walkthrough"
+    ],
+    "url": "https://thecybergeek.co.uk/walkthrough/hackthebox/2021/02/01/HackTheBox-SecNotes.html"
+  },
+  {
+    "title": "HackTheBox - Chatterbox",
+    "date": "2021-02-01",
+    "category": "HackTheBox",
+    "tags": [
+      "Walkthrough"
+    ],
+    "url": "https://thecybergeek.co.uk/walkthrough/hackthebox/2021/02/01/HackTheBox-Chatterbox.html"
+  },
+  {
+    "title": "HackTheBox - Haircut",
+    "date": "2021-01-31",
+    "category": "HackTheBox",
+    "tags": [
+      "Walkthrough"
+    ],
+    "url": "https://thecybergeek.co.uk/walkthrough/hackthebox/2021/01/31/HackTheBox-Haircut.html"
+  },
+  {
+    "title": "HackTheBox - TarTarSauce",
+    "date": "2021-01-31",
+    "category": "HackTheBox",
+    "tags": [
+      "Walkthrough"
+    ],
+    "url": "https://thecybergeek.co.uk/walkthrough/hackthebox/2021/01/31/HackTheBox-TarTarSauce.html"
+  },
+  {
+    "title": "HackTheBox - Kotarak",
+    "date": "2021-01-22",
+    "category": "HackTheBox",
+    "tags": [
+      "Walkthrough"
+    ],
+    "url": "https://thecybergeek.co.uk/walkthrough/hackthebox/2021/01/22/HackTheBox-Kotarak.html"
+  },
+  {
+    "title": "HackTheBox - SolidState",
+    "date": "2021-01-22",
+    "category": "HackTheBox",
+    "tags": [
+      "Walkthrough"
+    ],
+    "url": "https://thecybergeek.co.uk/walkthrough/hackthebox/2021/01/22/HackTheBox-SolidState.html"
+  },
+  {
+    "title": "HackTheBox - Cronos",
+    "date": "2021-01-21",
+    "category": "HackTheBox",
+    "tags": [
+      "Walkthrough"
+    ],
+    "url": "https://thecybergeek.co.uk/walkthrough/hackthebox/2021/01/21/HackTheBox-Cronos.html"
+  },
+  {
+    "title": "HackTheBox - ServMon",
+    "date": "2021-01-21",
+    "category": "HackTheBox",
+    "tags": [
+      "Walkthrough"
+    ],
+    "url": "https://thecybergeek.co.uk/walkthrough/hackthebox/2021/01/21/HackTheBox-ServMon.html"
+  },
+  {
+    "title": "HackTheBox - Sauna",
+    "date": "2021-01-21",
+    "category": "HackTheBox",
+    "tags": [
+      "Walkthrough"
+    ],
+    "url": "https://thecybergeek.co.uk/walkthrough/hackthebox/2021/01/21/HackTheBox-Sauna.html"
+  },
+  {
+    "title": "HackTheBox - Nineveh",
+    "date": "2021-01-21",
+    "category": "HackTheBox",
+    "tags": [
+      "Walkthrough"
+    ],
+    "url": "https://thecybergeek.co.uk/walkthrough/hackthebox/2021/01/21/HackTheBox-Nineveh.html"
+  },
+  {
+    "title": "HackTheBox - Tabby",
+    "date": "2020-07-26",
+    "category": "HackTheBox",
+    "tags": [
+      "Walkthrough"
+    ],
+    "url": "https://thecybergeek.co.uk/walkthrough/hackthebox/2020/07/26/HackTheBox-Tabby.html"
+  },
+  {
+    "title": "HackTheBox - OpenKeys",
+    "date": "2020-07-26",
+    "category": "HackTheBox",
+    "tags": [
+      "Walkthrough"
+    ],
+    "url": "https://thecybergeek.co.uk/walkthrough/hackthebox/2020/07/26/HackTheBox-OpenKeys.html"
+  },
+  {
+    "title": "CVE-2019-19699",
+    "date": "2020-04-04",
+    "category": "CVEs",
+    "tags": [
+      "Walkthrough"
+    ],
+    "url": "https://thecybergeek.co.uk/walkthrough/cves/2020/04/04/CVE-2019-19699.html"
+  },
+  {
+    "title": "CVE-2020-5844",
+    "date": "2020-01-29",
+    "category": "CVEs",
+    "tags": [
+      "POC"
+    ],
+    "url": "https://thecybergeek.co.uk/poc/cves/2020/01/29/CVE-2020-5844.html"
+  },
+  {
+    "title": "CVE-2019-19369",
+    "date": "2020-01-21",
+    "category": "CVEs",
+    "tags": [
+      "Walkthrough"
+    ],
+    "url": "https://thecybergeek.co.uk/walkthrough/cves/2020/01/21/CVE-2019-19369.html"
+  },
+  {
+    "title": "CVE-2019-19268",
+    "date": "2019-09-25",
+    "category": "CVEs",
+    "tags": [
+      "Walkthrough"
+    ],
+    "url": "https://thecybergeek.co.uk/walkthrough/cves/2019/09/25/CVE-2019-19268.html"
+  },
+  {
+    "title": "CVE-2019-16405",
+    "date": "2019-09-17",
+    "category": "CVEs",
+    "tags": [
+      "POC"
+    ],
+    "url": "https://thecybergeek.co.uk/poc/cves/2019/09/17/CVE-2019-16405.html"
+  }
+]
