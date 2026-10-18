@@ -26,7 +26,7 @@
   defaultHint();mobile.addEventListener('change', defaultHint);
 
   function openPanel(name, updateHistory = true) {
-    if(name==='guidelines'){location.assign('guidelines/');return;}
+    if(name==='wiki'){location.assign('https://wiki.thecybergeek.co.uk/');return;}
     if (!Object.hasOwn(names,name)) return;
     currentPanel = name;
     if (updateHistory && location.hash !== '#' + name) history.pushState(null,'','#' + name);
@@ -51,7 +51,8 @@
   }
   function syncRoute() {
     const name = location.hash.slice(1);
-    if (Object.hasOwn(names,name)) openPanel(name,false);
+    if (name === 'wiki') openPanel('wiki',false);
+    else if (Object.hasOwn(names,name)) openPanel(name,false);
     else if (dialog.open) closeWindow(false);
   }
   $$('[data-open]').forEach(link => {

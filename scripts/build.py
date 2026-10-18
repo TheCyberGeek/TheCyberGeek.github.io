@@ -15,7 +15,8 @@ import shutil
 
 ROOT=Path(__file__).resolve().parents[1]
 DOMAIN='https://thecybergeek.co.uk'
-PAGES={'archive':'The writeup archive','about':'The human','terminal':'Interactive terminal','research':'Vulnerability research','guidelines':'Content Wiki','contact':'Get in touch'}
+WIKI='https://wiki.thecybergeek.co.uk/'
+PAGES={'archive':'The writeup archive','about':'The human','terminal':'Interactive terminal','research':'Vulnerability research','contact':'Get in touch'}
 
 class Destinations(HTMLParser):
     def __init__(self):
@@ -74,10 +75,10 @@ def build(root=ROOT,base='',preview=False):
     def write(path,content):
         p=out/path.lstrip('/');p.parent.mkdir(parents=True,exist_ok=True);p.write_text(content,encoding='utf-8')
     def header():return f'<header class="lab-header"><a class="room-return" data-home href="{link("")}">← Return to the room</a><a class="github-link" href="https://github.com/TheCyberGeek" target="_blank" rel="noopener noreferrer">GITHUB ↗</a></header>'
-    def nav(active=''):return '<nav class="page-nav" aria-label="Site navigation"><a href="'+link('')+'">← ROOM</a>'+''.join(f'<a href="{link(name+"/")}"'+(' aria-current="page"' if active==name else '')+f'>{escape(title.upper())}</a>' for name,title in PAGES.items())+'</nav>'
+    def nav(active=''):return '<nav class="page-nav" aria-label="Site navigation"><a href="'+link('')+'">← ROOM</a>'+''.join(f'<a href="{WIKI if name=="wiki" else link(name+"/")}"'+(' aria-current="page"' if active==name else '')+f'>{escape(title.upper())}</a>' for name,title in [*list(PAGES.items())[:-1],('wiki','Content Wiki'),list(PAGES.items())[-1]])+'</nav>'
     def footer():return f'<footer class="lab-footer"><span>THECYBERGEEK / KEEPING IT GEEKY.</span><nav class="footer-links" aria-label="Footer"><a href="{link("")}">ROOM</a><a href="{link("archive/")}">ARCHIVE</a><a href="{link("contact/")}">CONTACT</a></nav></footer>'
     def doc(title,body,path,scripts=(),description='TheCyberGeek’s personal security lab, research and writeup archive.'):
-        return '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#111927"><meta name="description" content="'+escape(description,quote=True)+'"><title>'+escape(title)+' | TheCyberGeek</title><link rel="canonical" href="'+DOMAIN+link(path)+'"><link rel="stylesheet" href="'+link('assets/site.css?v=htb-archive-1')+'"><link rel="stylesheet" href="'+link('assets/pages.css?v=htb-archive-1')+'"><link rel="stylesheet" href="'+link('assets/parrot.css?v=20261017-rounded-frame')+'"><link rel="stylesheet" href="'+link('assets/htb-theme.css?v=wiki-layout-1')+'">'+''.join('<script src="'+link('assets/'+s)+'" defer></script>' for s in scripts)+'</head><body><a class="skip" href="#main-content">Skip to content</a>'+header()+body+footer()+'</body></html>'
+        return '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#111927"><meta name="description" content="'+escape(description,quote=True)+'"><title>'+escape(title)+' | TheCyberGeek</title><link rel="canonical" href="'+DOMAIN+link(path)+'"><link rel="stylesheet" href="'+link('assets/site.css?v=htb-archive-1')+'"><link rel="stylesheet" href="'+link('assets/pages.css?v=htb-archive-1')+'"><link rel="stylesheet" href="'+link('assets/parrot.css?v=20261017-rounded-frame')+'"><link rel="stylesheet" href="'+link('assets/htb-theme.css?v=wiki-subdomain-1')+'">'+''.join('<script src="'+link('assets/'+s)+'" defer></script>' for s in scripts)+'</head><body><a class="skip" href="#main-content">Skip to content</a>'+header()+body+footer()+'</body></html>'
     source=(root/'index.html').read_text(encoding='utf-8')
     urls={p['title']:base+p['url'] for p in posts}
     source=re.sub(r'data-article="([^"]+)" href="[^"]+"',lambda m:'data-article="'+m[1]+'" href="'+urls.get(m[1],link('archive/'))+'"',source)
@@ -95,7 +96,7 @@ def build(root=ROOT,base='',preview=False):
         if name=='terminal':panel='<h1 class="standalone-intro">Interactive terminal</h1><noscript><p>The terminal needs JavaScript. Use the navigation above to explore every section.</p></noscript>'+panel
         panel=re.sub(r'\sdata-panel="[^"]*"','',panel)
         panel=re.sub(r'\sdata-open="[^"]*"','',panel)
-        panel=re.sub(r'href="#(archive|about|terminal|research|guidelines|contact)"',lambda m:'href="'+link(m[1]+'/')+'"',panel)
+        panel=re.sub(r'href="#(archive|about|terminal|research|contact)"',lambda m:'href="'+link(m[1]+'/')+'"',panel)
         panel=panel.replace('src="assets/','src="'+link('assets/')).replace('href="archive/"','href="'+link('archive/')+'"')
         panel=re.sub(r'<a([^>]*?)href="'+re.escape(link('archive/'))+r'"([^>]*?)data-category="([^"]+)"',lambda m:'<a'+m[1]+'href="'+link('archive/?category=')+m[3]+'"'+m[2],panel)
         if name=='archive':
@@ -104,7 +105,7 @@ def build(root=ROOT,base='',preview=False):
         if name=='terminal':
             panel='<div class="terminal-desktop"><div class="terminal-titlebar"><span>Terminal</span><div class="window-actions"><a href="'+link('')+'" aria-label="Close terminal and return to room" title="Close">×</a><button id="expand-terminal" aria-label="Maximize terminal" aria-pressed="false" title="Toggle terminal size">□</button><a href="'+link('')+'" aria-label="Minimize terminal and return to room" title="Minimize">−</a></div></div>'+panel+'</div>'
         body='<main id="main-content" class="page-shell">'+nav(name)+panel+'</main>'
-        scripts=['archive-data.js?v=htb-archive-1','archive-utils.js','archive-ui.js?v=htb-archive-1','contact.js?v=htb-badge-1','terminal-menus.js','terminal.js?v=htb-archive-1','page.js']
+        scripts=['archive-data.js?v=htb-archive-1','archive-utils.js','archive-ui.js?v=htb-archive-1','contact.js?v=htb-badge-1','terminal-menus.js','terminal.js?v=wiki-subdomain-1','page.js?v=wiki-subdomain-1']
         write(name+'/index.html',doc(title,body,name+'/',scripts))
     for i,p in enumerate(posts):
         title=escape(p['title']);target=escape(p['source'],quote=True)

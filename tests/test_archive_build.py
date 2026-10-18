@@ -14,6 +14,18 @@ builder=module('builder','build.py')
 validate=module('validator','check-build.py').validate
 
 class ArchiveBuildTests(unittest.TestCase):
+    def test_wiki_is_external_and_old_page_is_removed(self):
+        wiki='https://wiki.thecybergeek.co.uk/'
+        home=(ROOT/'_site/index.html').read_text(encoding='utf-8')
+        self.assertNotIn('<section id="guidelines"',home)
+        self.assertIn('href="'+wiki+'"',home)
+        self.assertFalse((ROOT/'_site/guidelines').exists())
+        self.assertNotIn('guidelines',builder.PAGES)
+        about=(ROOT/'_site/about/index.html').read_text(encoding='utf-8')
+        self.assertIn('href="'+wiki+'"',about)
+        sitemap=(ROOT/'_site/sitemap.xml').read_text(encoding='utf-8')
+        self.assertNotIn('/guidelines/',sitemap)
+
     def test_complete_original_directory_and_sources(self):
         posts=builder.load_posts()
         self.assertEqual(len(posts),55)

@@ -65,6 +65,12 @@ test('full-page terminal search retains its query in the destination URL',async(
   e.ids['terminal-input'].value='search Kernel Adventures';await e.ids['terminal-form'].fire('submit');
   assert.equal(e.navigations.at(-1),'https://example.test/archive/?q=kernel%20adventures&category=all');
 });
+
+test('full-page terminal wiki command opens the wiki subdomain',async()=>{
+  const e=setup();delete e.ids['archive-results'];e.load('page.js');
+  e.ids['terminal-input'].value='wiki';await e.ids['terminal-form'].fire('submit');
+  assert.equal(e.navigations.at(-1),'https://wiki.thecybergeek.co.uk/');
+});
 test('HTB badge handles cached images, loading and failure with a visible fallback',async()=>{
   const e=setup(),pending=new Element('img'),cached=new Element('img');
   for(const image of [pending,cached]){

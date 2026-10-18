@@ -11,7 +11,7 @@
     event.currentTarget.textContent=maximized?'❐':'□';
   });
   let pendingArchive='';
-  const navigate=name=>location.assign(new URL(name==='archive'&&pendingArchive?pendingArchive:name+'/',home));
+  const navigate=name=>location.assign(name==='wiki' ? 'https://wiki.thecybergeek.co.uk/' : new URL(name==='archive'&&pendingArchive?pendingArchive:name+'/',home));
   document.querySelectorAll('[data-article]').forEach(link=>{const post=posts.find(p=>p.title===link.dataset.article);if(post)link.href=post.url;});
   document.querySelector('#view-cves')?.addEventListener('click',()=>location.assign(new URL('archive/?category=CVEs',home)));
   if(document.querySelector('#terminal-form'))window.TCGTerminal.mount({posts,openPanel:navigate,closeWindow:()=>location.assign(home),archive:{query:(query,category='all')=>{pendingArchive='archive/?q='+encodeURIComponent(query)+'&category='+encodeURIComponent(category);}},search:{focus(){}},selectFilter(){pendingArchive='archive/?category=all&q=';}});
