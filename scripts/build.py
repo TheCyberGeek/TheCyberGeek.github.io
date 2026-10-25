@@ -131,8 +131,10 @@ def build(root=ROOT,base='',preview=False):
         destination=link('archive/?category='+category)
         redirect='<!doctype html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="refresh" content="0;url='+destination+'"><title>Archive | TheCyberGeek</title></head><body><a href="'+destination+'">Open the archive</a></body></html>'
         write(category+'.html',redirect);write(category+'/index.html',redirect)
-    body='<main id="main-content" class="page-shell">'+nav()+'<section class="panel standalone-panel"><p class="eyebrow">404 / SIGNAL LOST</p><h1>This path leads to a dead end.</h1><p>The file you’re looking for may be in the archive.</p><div class="action-row"><a class="button primary" href="'+link('archive/')+'">Search the archive →</a><a class="button secondary" href="'+link('')+'">Return to the room</a></div></section></main>'
-    write('404.html',doc('Signal lost',body,'404.html'))
+    for error_code in ('403','404'):
+        error_html=(root/f'{error_code}.html').read_text(encoding='utf-8')
+        error_html=re.sub(r'(href|src)="(/[^"#]*)"',lambda m:f'{m.group(1)}="{base}{m.group(2)}"',error_html)
+        write(f'{error_code}.html',error_html)
     paths=['']+[name+'/' for name in PAGES]+[p['url'].lstrip('/') for p in posts]
     write('sitemap.xml','<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+''.join('<url><loc>'+escape(DOMAIN+link(path))+'</loc></url>' for path in paths)+'</urlset>')
     write('robots.txt','User-agent: *\nAllow: /\nSitemap: '+DOMAIN+link('sitemap.xml')+'\n')
@@ -140,7 +142,7 @@ def build(root=ROOT,base='',preview=False):
         if base:raise ValueError('Local preview must use an empty base path')
         for name in [*PAGES,'walkthrough','challenge','poc','HackTheBox','CVEs']:
             if (out/name).is_dir():shutil.copytree(out/name,root/name,dirs_exist_ok=True)
-        for name in ['404.html','HackTheBox.html','CVEs.html','sitemap.xml','robots.txt','assets/archive-data.js']:
+        for name in ['403.html','404.html','HackTheBox.html','CVEs.html','sitemap.xml','robots.txt','assets/archive-data.js']:
             shutil.copy2(out/name,root/name)
     print(f'Built {len(posts)} original archive readers, {len(PAGES)} full pages, room, legacy routes, 404 and sitemap in {out}.')
     return posts
