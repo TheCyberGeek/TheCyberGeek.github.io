@@ -71,7 +71,7 @@ class ArchiveBuildTests(unittest.TestCase):
         with tempfile.TemporaryDirectory(dir=ROOT) as tmp:
             root=Path(tmp)
             for folder in ['assets','_posts','scripts']:shutil.copytree(ROOT/folder,root/folder)
-            for file in ['index.html','CNAME']:shutil.copy2(ROOT/file,root/file)
+            for file in ['index.html','CNAME','403.html','404.html']:shutil.copy2(ROOT/file,root/file)
             builder.build(root,base='/portfolio')
             self.assertEqual(validate(root/'_site','/portfolio'),55)
             data=(root/'_site/assets/archive-data.js').read_text()
