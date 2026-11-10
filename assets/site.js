@@ -4,9 +4,11 @@
   const $$ = selector => [...document.querySelectorAll(selector)];
   const posts = window.ARCHIVE_POSTS || [];
   const dialog = $('#app-window');
+  const wikiOverlay = $('#wiki-video-overlay');
+  const wikiVideo = $('#wiki-intro-video');
   const panels = $$('[data-panel]');
-  const names = {archive:'Archive',about:'About TheCyberGeek',terminal:'Terminal',research:'Research',contact:'Contact'};
-  const hints = {archive:'The server rack → open the original writeup archive.',about:'The human → meet the geek behind the glasses.',terminal:'The terminal → type your way around the lab.',research:'The workbench → explore vulnerability research.',contact:'The comms screen → open a connection.'};
+  const names = {archive:'Archive',about:'About TheCyberGeek',terminal:'Terminal',research:'Research',contact:'Contact','wiki-intro':'Content Wiki'};
+  const hints = {archive:'The server rack → open the original writeup archive.',about:'The human → meet the geek behind the glasses.',terminal:'The terminal → type your way around the lab.',research:'The workbench → explore vulnerability research.',contact:'The comms screen → open a connection.','wiki-intro':'Content Wiki → watch the introduction, then proceed to the wiki.'};
   const scene = $('#room-scene');
   const mobile = matchMedia('(max-width: 760px)');
   let lastOpener = null;
@@ -26,21 +28,29 @@
   defaultHint();mobile.addEventListener('change', defaultHint);
 
   function openPanel(name, updateHistory = true) {
-    if(name==='wiki'){location.assign('https://wiki.thecybergeek.co.uk/');return;}
+    if(name==='wiki-intro'){
+      if(updateHistory && location.hash!=='#wiki-intro')history.pushState(null,'','#wiki-intro');
+      wikiOverlay.hidden=false;document.body.classList.add('wiki-video-open');wikiVideo.currentTime=0;wikiVideo.muted=true;
+      requestAnimationFrame(()=>wikiVideo.play().catch(error=>console.warn('Wiki intro playback was blocked:',error)));
+      $('#wiki-video-close').focus({preventScroll:true});return;
+    }
     if (!Object.hasOwn(names,name)) return;
     currentPanel = name;
     if (updateHistory && location.hash !== '#' + name) history.pushState(null,'','#' + name);
     panels.forEach(panel => {panel.hidden = panel.dataset.panel !== name;});
     $('#window-title').textContent = names[name];
-    $('#full-page-link').href=name==='terminal'?'terminal/':name+'/';
+    $('#full-page-link').href=name==='terminal'?'terminal/':name==='wiki-intro'?'https://wiki.thecybergeek.co.uk/':name+'/';
+    $('#full-page-link').textContent=name==='wiki-intro'?'PROCEED TO WIKI ↗':'OPEN AS PAGE ↗';
     document.title = `TheCyberGeek | ${name === 'about' ? 'The human' : name.charAt(0).toUpperCase()+name.slice(1)}`;
     if (!dialog.open) {dialog.showModal();document.body.classList.add('modal-open');}
+    wikiVideo.pause();wikiVideo.currentTime=0;
     $('.window-body').scrollTop = 0;
     $$('.room-dock [data-open]').forEach(link => {if(link.dataset.open === name) link.setAttribute('aria-current','true');else link.removeAttribute('aria-current');});
     if (name === 'terminal') $('#terminal-input').focus({preventScroll:true});
     else $('#close-window').focus({preventScroll:true});
   }
   function closeWindow(updateHistory = true) {
+    wikiVideo.pause();wikiVideo.currentTime=0;
     if (dialog.open) dialog.close();
     document.body.classList.remove('modal-open');
     currentPanel = '';
@@ -49,10 +59,13 @@
     document.title = 'TheCyberGeek | Welcome to the lab';
     lastOpener?.focus({preventScroll:true});
   }
+  function proceedToWiki(){location.assign('https://wiki.thecybergeek.co.uk/');}
+  function closeWikiVideo(){wikiVideo.pause();wikiVideo.currentTime=0;wikiOverlay.hidden=true;document.body.classList.remove('wiki-video-open');proceedToWiki();}
+  $('#wiki-video-close').addEventListener('click',closeWikiVideo);
+  wikiVideo.addEventListener('ended',proceedToWiki);
   function syncRoute() {
     const name = location.hash.slice(1);
-    if (name === 'wiki') openPanel('wiki',false);
-    else if (Object.hasOwn(names,name)) openPanel(name,false);
+    if (Object.hasOwn(names,name)) openPanel(name,false);
     else if (dialog.open) closeWindow(false);
   }
   $$('[data-open]').forEach(link => {
@@ -70,6 +83,7 @@
     event.currentTarget.textContent=maximized?'❐':'□';
   });
   dialog.addEventListener('cancel',event=>{event.preventDefault();closeWindow();});
+  wikiOverlay.addEventListener('keydown',event=>{if(event.key==='Escape'){event.preventDefault();closeWikiVideo();}});
   dialog.addEventListener('click',event=>{
     const r=dialog.getBoundingClientRect();
     if(event.target===dialog && (event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom))closeWindow();
