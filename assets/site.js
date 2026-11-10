@@ -43,14 +43,14 @@
     $('#full-page-link').textContent=name==='wiki-intro'?'PROCEED TO WIKI ↗':'OPEN AS PAGE ↗';
     document.title = `TheCyberGeek | ${name === 'about' ? 'The human' : name.charAt(0).toUpperCase()+name.slice(1)}`;
     if (!dialog.open) {dialog.showModal();document.body.classList.add('modal-open');}
-    wikiVideo.pause();wikiVideo.currentTime=0;
+    if(typeof wikiVideo.pause==='function'){wikiVideo.pause();wikiVideo.currentTime=0;}
     $('.window-body').scrollTop = 0;
     $$('.room-dock [data-open]').forEach(link => {if(link.dataset.open === name) link.setAttribute('aria-current','true');else link.removeAttribute('aria-current');});
     if (name === 'terminal') $('#terminal-input').focus({preventScroll:true});
     else $('#close-window').focus({preventScroll:true});
   }
   function closeWindow(updateHistory = true) {
-    wikiVideo.pause();wikiVideo.currentTime=0;
+    if(typeof wikiVideo.pause==='function'){wikiVideo.pause();wikiVideo.currentTime=0;}
     if (dialog.open) dialog.close();
     document.body.classList.remove('modal-open');
     currentPanel = '';
@@ -60,7 +60,7 @@
     lastOpener?.focus({preventScroll:true});
   }
   function proceedToWiki(){location.assign('https://wiki.thecybergeek.co.uk/');}
-  function closeWikiVideo(){wikiVideo.pause();wikiVideo.currentTime=0;wikiOverlay.hidden=true;document.body.classList.remove('wiki-video-open');proceedToWiki();}
+  function closeWikiVideo(){if(typeof wikiVideo.pause==='function'){wikiVideo.pause();wikiVideo.currentTime=0;}wikiOverlay.hidden=true;document.body.classList.remove('wiki-video-open');proceedToWiki();}
   $('#wiki-video-close').addEventListener('click',closeWikiVideo);
   wikiVideo.addEventListener('ended',proceedToWiki);
   function syncRoute() {
@@ -148,3 +148,4 @@
   }
   drawRoom(0);requestAnimationFrame(animate);syncRoute();
 })();
+
